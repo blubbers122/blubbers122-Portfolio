@@ -4,7 +4,20 @@ body {
 
 .background-img {
   width: 100%;
-  height: 94vh;
+  max-height: 94vh;
+}
+
+@media only screen and (min-width: 1307px) {
+  .background-img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #about-content {
+    top: 50%;
+  }
 }
 
 .content-heading {
@@ -38,7 +51,6 @@ body {
 
 .navbar {
   padding: 0px;
-  height: 6vh;
 }
 
 .navbar-brand {
@@ -58,6 +70,12 @@ body {
 
 }
 
-#tech-skills-list, #tech-toolbox-list {
+#tech-skills-list, #tech-toolbox-list, #personal-strengths-list {
   font-size: 1.7em;
+}
+
+.project-image {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
 }
