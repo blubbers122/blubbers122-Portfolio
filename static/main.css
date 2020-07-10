@@ -54,7 +54,7 @@ body {
 }
 
 .navbar-brand {
-  padding: .5rem;
+  padding: 1rem;
 }
 
 .nav-item {
@@ -63,7 +63,8 @@ body {
 
 .nav-item:hover {
   cursor: pointer;
-  background-color: orange;
+  background-color: white;
+  color: #f47635;
 }
 
 .active {
