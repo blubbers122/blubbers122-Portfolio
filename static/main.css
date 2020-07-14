@@ -2,26 +2,36 @@ body {
  background: #0f0f0f;
 }
 
+html {
+  max-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .background-img {
   width: 100%;
-  max-height: 94vh;
-}
-
-@media only screen and (min-width: 1307px) {
-  .background-img {
-    height: 100%;
-    width: auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #about-content {
-    top: 50%;
-  }
+  min-height: 93vh;
 }
 
 .content-heading {
-  color: #f47635;
+  color: #009a9a;
+  font-size: 3rem;
+  font-weight: lighter;
+  margin: 20px auto 20px;
+  text-align: center;
+}
+
+.sub-heading {
+  color: #00cece;
+  font-size: 2rem;
   font-weight: lighter;
   margin: 20px auto 20px;
 }
@@ -29,13 +39,22 @@ body {
 #about-section {
   position: relative;
   text-align: center;
+  overflow: hidden;
 }
 
-#about-content {
+#about-content p, #contact-section p {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: lightgray;
+  margin: 10%;
+}
+
+#home-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 5%;
+  left: 60%;
+  transform: translate(-60%, -5%);
+  text-align: left;
 }
 
 #content {
@@ -43,14 +62,13 @@ body {
   position: relative;
 }
 
-#greeting {
-  color: #f47635;
-  text-align: center;
-  font-size: 3em;
-}
-
 .navbar {
   padding: 0px;
+  position: static;
+}
+
+.navbar > a b {
+  color: #00cece!important;
 }
 
 .navbar-brand {
@@ -63,12 +81,12 @@ body {
 
 .nav-item:hover {
   cursor: pointer;
-  background-color: white;
-  color: #f47635;
+  background-color: #009a9a;
+  border-radius: 5px;
 }
 
 .active {
-
+  color: #00cece !important;
 }
 
 #tech-skills-list, #tech-toolbox-list, #personal-strengths-list {
@@ -79,4 +97,114 @@ body {
   height: 100%;
   max-width: 100%;
   width: auto;
+}
+
+.project-container {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: hover-color-change;
+}
+
+.project-container:last-child {
+  margin-bottom: 5vh;
+}
+
+.project-container:hover {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: unhover-color-change;
+}
+
+@keyframes hover-color-change {
+  from {
+    background: #225757;
+  }
+  to {
+    background: #111111;
+  }
+}
+
+@keyframes unhover-color-change {
+  from {
+    background: #111111;
+  }
+  to {
+    background: #225757;
+  }
+}
+
+#greeting {
+  text-align: left;
+  color: black;
+}
+
+#typewriter {
+  font-size: 1.5em;
+  color: #009a9a;
+}
+
+#typewriter h1 {
+  width: 280px;
+  overflow: hidden;
+  border-right: 1em orange;
+  white-space: nowrap;
+  margin-right: auto;
+  color: black;
+  font-size: 2rem;
+  font-weight: lighter;
+  animation:
+    typing 1s steps(40, end) 0s infinite alternate;
+}
+
+#profile-pic {
+  width: 100%;
+}
+
+#contact-section a {
+  color: #00cece;
+}
+
+@media only screen and (max-width: 560px) {
+  .navbar-brand {
+    font-size: 80%;
+  }
+  #typewriter {
+    font-size: 90%;
+  }
+  #greeting {
+    font-size: 140%;
+  }
+  #typewriter h1 {
+    font-size: 110%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  #greeting {
+    font-size: 2em;
+  }
+  #typewriter {
+    font-size: 1.5em;
+  }
+  #typewriter h1 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 1294px) {
+
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-type-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }

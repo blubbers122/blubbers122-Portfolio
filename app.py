@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    reqXHRKey = request.headers.get("X-Requested-With")
+    if reqXHRKey and reqXHRKey == "XMLHttpRequest":
+        pass
     return render_template("index.html")
 
 
