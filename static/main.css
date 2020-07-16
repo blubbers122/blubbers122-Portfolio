@@ -168,31 +168,71 @@ html {
   .navbar-brand {
     font-size: 80%;
   }
-  #typewriter {
-    font-size: 90%;
+}
+
+@media (max-aspect-ratio: 14/10) {
+  .background-img {
+    width: 150%;
   }
-  #greeting {
-    font-size: 140%;
-  }
-  #typewriter h1 {
-    font-size: 110%;
+  #home-content {
+    top: 5%;
+    left: 70%;
+    transform: translate(-70%, -5%);
   }
 }
 
-@media only screen and (max-width: 660px) {
+@media (max-aspect-ratio: 1/1) {
+  .background-img {
+    width: 220%;
+    height: auto;
+    min-height: 50%;
+  }
+  #home-content {
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    width: 80%;
+  }
   #greeting {
-    font-size: 2em;
+    font-size: 1.7em;
+    margin: 0px;
   }
   #typewriter {
+    font-size: 1.2em;
+    margin:0px;
+  }
+  #typewriter h1 {
     font-size: 1.5em;
   }
-  #typewriter h1 {
-    font-size: 1em;
-  }
 }
 
-@media only screen and (min-width: 1294px) {
-
+@media (max-aspect-ratio: 6/9) {
+  .content-heading {
+    font-size: 2em;
+  }
+  .sub-heading {
+    font-size: 1.5em;
+  }
+  #skills li {
+    font-size: .7em;
+  }
+  #home-content {
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    width: 90%;
+  }
+  #greeting {
+    font-size: 1.5em;
+    margin: 0px;
+  }
+  #typewriter {
+    font-size: .8em;
+    margin: 0px;
+  }
+  #typewriter h1 {
+    font-size: 1.2em;
+  }
 }
 
 @keyframes typing {

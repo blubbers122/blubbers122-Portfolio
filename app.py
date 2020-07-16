@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request, session, redirect
+from waitress import serve
+
 
 app = Flask(__name__)
 
-#E25128 #F15A2A #F47635 #28A5DE #0095CB
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect("/")
+
 
 @app.route("/")
 def home():
@@ -45,4 +50,6 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.run(debug=True)
+
+    serve(app)
