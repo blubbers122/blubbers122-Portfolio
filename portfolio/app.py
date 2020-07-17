@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, session, redirect
 #from waitress import serve
 
+app = Flask(__name__)
+
 def create_app():
-    app = Flask(__name__)
-    return app
+    return Flask(__name__)
 
 @app.errorhandler(404)
 def page_not_found(e):
