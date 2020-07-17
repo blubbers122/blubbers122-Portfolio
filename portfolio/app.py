@@ -51,7 +51,3 @@ def contact():
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("contact.html")
     return redirect("/")
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')

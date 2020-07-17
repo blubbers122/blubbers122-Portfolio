@@ -1,3 +1,4 @@
-from portfolio import app
+from portfolio.app import app
 
-portfolio_app = app.create_app()
+if __name__ == "__main__":
+    app.run()
