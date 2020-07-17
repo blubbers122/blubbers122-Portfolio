@@ -13,6 +13,7 @@ def page_not_found(e):
 
 @app.route("/")
 def home():
+    print("index route")
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         pass
