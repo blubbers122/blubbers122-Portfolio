@@ -243,8 +243,3 @@ html {
     width: 100%
   }
 }
-
-@keyframes blink-type-cursor {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
