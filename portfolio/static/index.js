@@ -1,5 +1,6 @@
 // forces retrieval of page from server
 window.addEventListener( "pageshow", function ( event ) {
+  console.log('pageshow')
   var historyTraversal = event.persisted ||
                          ( typeof window.performance != "undefined" &&
                               window.performance.navigation.type === 2 );
@@ -21,14 +22,27 @@ window.onload = function() {
 
 const typewriterWords = ["a Pianist", "a Runner", "a Game Developer", "a Weightlifter", "a Drummer", "a Composer", "a Perfectionist", "an INFP", "a Tech Enthusiast", "an Outdoorsman"]
 var index = -1;
-
 const typewriter = document.querySelector("#typewriter")
-typewriter.addEventListener("animationiteration", () => {
-  if (index % 2 === 0) typewriter.children[0].innerHTML = typewriterWords[index / 2];
-  index++;
-  if (index >= typewriterWords.length * 2 - 1) index = -1;
+
+// resets typewriter animation when you refocus on tab to
+// prevent incorrect values for index after refocus
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState == "visible") index = -1;
 })
 
+// loops through typewriter word bank
+typewriter.addEventListener("animationiteration", () => {
+  var typewriterWidth = typewriter.firstElementChild.getBoundingClientRect().width
+  if (typewriterWidth == 0) {
+    index++;
+    typewriter.children[0].innerHTML = typewriterWords[index];
+  }
+
+
+  if (index >= typewriterWords.length - 1) index = -1;
+})
+
+// handles loading dynamic page content with AJAX
 function loadContent(name) {
   const request = new XMLHttpRequest();
   request.open("GET", `/${name}`);
@@ -43,11 +57,15 @@ function loadContent(name) {
   request.send();
 }
 
-const links = document.querySelectorAll(".nav-link");
+// loads single page web app content when clicking nav items
+const navItems = document.querySelectorAll(".nav-item");
 
-links.forEach(link => {
-  link.addEventListener("click", function() {
+navItems.forEach(navItem => {
+  navItem.addEventListener("click", function() {
+    var link = navItem.firstElementChild
+
     if (link.id === "resume-download") return;
+
     var active = document.querySelector(".active")
     if (active) active.classList.remove("active");
     link.classList.add("active")

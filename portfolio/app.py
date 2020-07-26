@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, session, redirect
+from flask_caching import Cache
 
 app = Flask(__name__)
+cache = Cache(app, config={
+    "CACHE_TYPE": "filesystem",
+    "CACHE_DIR": "cache-directory"
+})
 
 def create_app():
     app = Flask(__name__)
@@ -10,10 +15,12 @@ def create_app():
 def page_not_found(e):
     return redirect("/")
 
+max_age = 20
 
 @app.route("/")
+@cache.cached(timeout=max_age)
 def home():
-    print("index route")
+    print('hi')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         pass
@@ -21,7 +28,9 @@ def home():
 
 
 @app.route("/about")
+@cache.cached(timeout=max_age)
 def about():
+    print('about')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("about.html")
@@ -29,7 +38,9 @@ def about():
 
 
 @app.route("/skills")
+@cache.cached(timeout=max_age)
 def skills():
+    print('skills')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("skills.html")
@@ -37,7 +48,9 @@ def skills():
 
 
 @app.route("/projects")
+@cache.cached(timeout=max_age)
 def projects():
+    print('projects')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("projects.html")
@@ -45,8 +58,14 @@ def projects():
 
 
 @app.route("/contact")
+@cache.cached(timeout=max_age)
 def contact():
+    print('contact')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("contact.html")
     return redirect("/")
+
+
+#if __name__ == "__main__":
+    #app.run(debug=True)
