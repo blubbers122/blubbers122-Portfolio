@@ -38,9 +38,23 @@ typewriter.addEventListener("animationiteration", () => {
     typewriter.children[0].innerHTML = typewriterWords[index];
   }
 
-
   if (index >= typewriterWords.length - 1) index = -1;
 })
+
+const navMenu = document.querySelector(".navbar-nav")
+
+window.addEventListener("resize", function() {updateNavCollapse()})
+
+function updateNavCollapse() {
+  if (document.body.clientWidth < 768) {
+    navMenu.dataset.target = ".navbar-collapse"
+  }
+  else {
+    navMenu.dataset.target = ""
+  }
+}
+
+updateNavCollapse()
 
 // handles loading dynamic page content with AJAX
 function loadContent(name) {
