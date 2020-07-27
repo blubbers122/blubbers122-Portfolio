@@ -239,6 +239,15 @@ html {
   body {
     -webkit-text-size-adjust: 100%;
   }
+  #greeting {
+    -webkit-text-size-adjust: 100%;
+  }
+  #typewriter {
+    -webkit-text-size-adjust: 100%;
+  }
+  #typewriter h1 {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 @keyframes typing {
