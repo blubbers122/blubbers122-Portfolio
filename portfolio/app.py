@@ -6,6 +6,7 @@ cache = Cache(app, config={
     "CACHE_TYPE": "filesystem",
     "CACHE_DIR": "cache-directory"
 })
+cache.clear()
 
 def create_app():
     app = Flask(__name__)
@@ -15,7 +16,7 @@ def create_app():
 def page_not_found(e):
     return redirect("/")
 
-max_age = 1800
+max_age = 1
 
 @app.route("/")
 @cache.cached(timeout=max_age)
