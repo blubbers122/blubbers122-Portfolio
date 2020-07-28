@@ -16,12 +16,11 @@ def create_app():
 def page_not_found(e):
     return redirect("/")
 
-max_age = 1
+max_age = 1800
 
 @app.route("/")
 @cache.cached(timeout=max_age)
 def home():
-    print('index')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         pass
@@ -31,7 +30,6 @@ def home():
 @app.route("/about")
 @cache.cached(timeout=max_age)
 def about():
-    print('about')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("about.html")
@@ -41,7 +39,6 @@ def about():
 @app.route("/skills")
 @cache.cached(timeout=max_age)
 def skills():
-    print('skills')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("skills.html")
@@ -51,7 +48,6 @@ def skills():
 @app.route("/projects")
 @cache.cached(timeout=max_age)
 def projects():
-    print('projects')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("projects.html")
@@ -61,12 +57,7 @@ def projects():
 @app.route("/contact")
 @cache.cached(timeout=max_age)
 def contact():
-    print('contact')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         return render_template("contact.html")
     return redirect("/")
-
-
-#if __name__ == "__main__":
-    #app.run(debug=True)
