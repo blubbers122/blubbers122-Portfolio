@@ -21,7 +21,7 @@ max_age = 1
 @app.route("/")
 @cache.cached(timeout=max_age)
 def home():
-    print('hi')
+    print('index')
     reqXHRKey = request.headers.get("X-Requested-With")
     if reqXHRKey and reqXHRKey == "XMLHttpRequest":
         pass
