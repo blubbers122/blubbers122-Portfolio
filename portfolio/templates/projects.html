@@ -1,55 +1,71 @@
 <div id="projects-list-container" class="container text-white">
   <h2 class="text-center content-heading">Here are some of my projects</h2>
-    <h4 class="sub-heading text-center m-3">Repertoirium</h4>
-    <div class="project-container row border rounded p-3">
-      <div class="project-description col-lg-8 col-12">
-        <p>I was inspired to build this repertoir management web app so I could easily track my progress as I learned new songs.
-          Repertoirium features a user login/register system, a song lookup function with audio playback
-          user repertoir storage, a chat page, a tempo tracker, and more.
-          This is one of my bigger projects and I grew much more familiar with full-stack web development
-          as well as working with APIs, socket.io, and AJAX. I went with vanilla JavaScript for the front-end logic and the
-          Python library Flask for the back-end. It is capable of storing multiple users' data in a local
-          session as well as into a permanent PostgreSQL database to persist after logout.</p>
-        <a target="_blank" href="https://github.com/blubbers122/Repertoirium" class="btn btn-block btn-outline-light mb-3">See My Code</a>
-      </div>
-      <div class="project-image col-lg-4 col-12 text-center mb-3">
-        <img class="img-fluid" src="{{url_for('static', filename='images/rep_tempo_tracking.jpg')}}">
-      </div>
+  <h4 class="sub-heading text-center m-3">Repertoirium</h4>
+  <div class="project-container row border rounded p-3">
+    <div class="project-description col-lg-8 col-12">
+      <p>I was inspired to build this repertoir management web app so I could easily track my progress as I learned new songs.
+        Repertoirium features a user login/register system, a song lookup function with audio playback
+        user repertoir storage, a chat page, a tempo tracker, and more.
+        This is one of my bigger projects and I grew much more familiar with full-stack web development
+        as well as working with APIs, socket.io, and AJAX. I went with vanilla JavaScript for the front-end logic and the
+        Python library Flask for the back-end. It is capable of storing multiple users' data in a local
+        session as well as into a permanent PostgreSQL database to persist after logout.</p>
+      <a target="_blank" href="https://github.com/blubbers122/Repertoirium" class="btn btn-block btn-outline-light mb-3">See My Code</a>
+      <button class="open-modal-btn btn btn-block btn-outline-light mb-3" data-title="Repertoirium" data-toggle="modal" data-target=".modal">See it in action</button>
     </div>
-    <h4 class="sub-heading text-center m-3">This Website</h4>
-    <div class="project-container row border rounded p-3">
-      <div class="project-image col-lg-4 col-12 text-center mb-3">
-        <img class="img-fluid" src="{{url_for('static', filename='images/portfolio_thumbnail.jpg')}}">
-      </div>
-      <div class="project-description col-lg-8 col-12">
-        <p>I built this website too! I liked the opportunity it gave to implement my own UI in my preferred style and see it all in action.
-          After finishing this one, it was apparent that I tend to gravitate toward a sleek, minimalist design.</p>
-        <a target="_blank" href="https://github.com/blubbers122/blubbers122-Portfolio" class="btn btn-block btn-outline-light mb-3">See My Code</a>
-      </div>
-    </div>
-    <h4 class="sub-heading text-center m-3">Drum Beat Maker</h4>
-    <div class="project-container row border rounded p-3">
-      <div class="project-description col-lg-8 col-12">
-        <p>This web app that was built with React lets you create drum beats using up to 12 instruments by pointing and clicking to place notes on an interactive grid.
-          Building this webapp was instrumental in getting me familiar with the React Framework. I have plans to expand the Drum Beat Maker's functionality
-          to include more drumkits, time signature settings. I hope to eventually implement some of it's functionality into a fully fledged music composing webapp.</p>
-        <a target="_blank" href="https://github.com/blubbers122/drum_beat_maker" class="btn btn-block btn-outline-light mb-3">See My Code</a>
-      </div>
-      <div class="project-image col-lg-4 col-12 text-center mb-3">
-        <img class="img-fluid" src="{{url_for('static', filename='images/drum_beat_maker.jpg')}}">
-      </div>
-    </div>
-    <h4 class="sub-heading text-center m-3">Data Structure Implementations in C++</h4>
-    <div class="project-container row border rounded p-3">
-      <div class="project-image col-lg-4 col-12 text-center mb-3">
-        <img class="img-fluid" src="http://www.btechsmartclass.com/data_structures/ds_images/BST%20Example.png">
-      </div>
-      <div class="project-description col-lg-8 col-12">
-        <p>I created this repository to hold all of my implementations of the most vital data structures in programming. This was very helpful in understanding the
-           workings of the popular data structures used in computer science. I decided to take the challenge of implementing them in a lower-level language. This helped me get a
-           better perspective of what exactly is going on regarding the allocation and storage of the data structures' building blocks in memory. It also gave me a good understanding
-           of the pros and cons of the structures and their appropriate use cases.</p>
-        <a target="_blank" href="https://github.com/blubbers122/C-DataStructures-Algorithms" class="btn btn-block btn-outline-light mb-3">See My Code</a>
-      </div>
+    <div class="project-image col-lg-4 col-12 text-center mb-3">
+      <img class="img-fluid" src="{{url_for('static', filename='images/rep_tempo_tracking.jpg')}}">
     </div>
   </div>
+  <h4 class="sub-heading text-center m-3">Pomodoro Clock</h4>
+  <div class="project-container row border rounded p-3">
+    <div class="project-image col-lg-4 col-12 text-center mb-3">
+      <img class="img-fluid" src="{{url_for('static', filename='images/pomodoro.jpg')}}">
+    </div>
+    <div class="project-description col-lg-8 col-12">
+      <p>This is an pretty straight-forward pomodoro timer app I built with the React framework. It passes the timer settings from the interface to the display using the React state.
+         It can change the session and break length for the clock to run at various intervals. The Sass preprocessor was used for adding the CSS styles.
+         </p>
+      <a target="_blank" href="https://github.com/blubbers122/drum_beat_maker" class="btn btn-block btn-outline-light mb-3">See My Code</a>
+      <button class="open-modal-btn btn btn-block btn-outline-light mb-3" data-title="Pomodoro Clock" data-toggle="modal" data-target=".modal">See it in action</button>
+    </div>
+  </div>
+  <h4 class="sub-heading text-center m-3">Drum Beat Maker</h4>
+  <div class="project-container row border rounded p-3">
+    <div class="project-description col-lg-8 col-12">
+      <p>This web app that was built with React lets you create drum beats using up to 12 instruments by pointing and clicking to place notes on an interactive grid.
+        Building this webapp was instrumental in getting me familiar with the React Framework. I have plans to expand the Drum Beat Maker's functionality
+        to include more drumkits, time signature settings. I hope to eventually implement some of it's functionality into a fully fledged music composing webapp.</p>
+      <a target="_blank" href="https://github.com/blubbers122/drum_beat_maker" class="btn btn-block btn-outline-light mb-3">See My Code</a>
+      <button class="open-modal-btn btn btn-block btn-outline-light mb-3" data-title="Drum Beat Maker" data-toggle="modal" data-target=".modal">See it in action</button>
+    </div>
+    <div class="project-image col-lg-4 col-12 text-center mb-3">
+      <img class="img-fluid" src="{{url_for('static', filename='images/drum_beat_maker.jpg')}}">
+    </div>
+  </div>
+  <h4 class="sub-heading text-center m-3">This Website</h4>
+  <div class="project-container row border rounded p-3">
+    <div class="project-image col-lg-4 col-12 text-center mb-3">
+      <img class="img-fluid" src="{{url_for('static', filename='images/portfolio_thumbnail.jpg')}}">
+    </div>
+    <div class="project-description col-lg-8 col-12">
+      <p>I built this website too! I liked the opportunity it gave to implement my own UI in my preferred style and see it all in action.
+        After finishing this one, it was apparent that I tend to gravitate toward a sleek, minimalist design.</p>
+      <a target="_blank" href="https://github.com/blubbers122/blubbers122-Portfolio" class="btn btn-block btn-outline-light mb-3">See My Code</a>
+      <button class="open-modal-btn btn btn-block btn-outline-light mb-3" data-title="This Website" data-toggle="modal" data-target=".modal">See it in action</button>
+    </div>
+  </div>
+  <h4 class="sub-heading text-center m-3">Data Structure Implementations in C++</h4>
+  <div class="project-container row border rounded p-3">
+    <div class="project-image col-lg-4 col-12 text-center mb-3">
+      <img class="img-fluid" src="http://www.btechsmartclass.com/data_structures/ds_images/BST%20Example.png">
+    </div>
+    <div class="project-description col-lg-8 col-12">
+      <p>I created this repository to hold all of my implementations of the most vital data structures in programming. This was very helpful in understanding the
+         workings of the popular data structures used in computer science. I decided to take the challenge of implementing them in a lower-level language. This helped me get a
+         better perspective of what exactly is going on regarding the allocation and storage of the data structures' building blocks in memory. It also gave me a good understanding
+         of the pros and cons of the structures and their appropriate use cases.</p>
+      <a target="_blank" href="https://github.com/blubbers122/C-DataStructures-Algorithms" class="btn btn-block btn-outline-light mb-3">See My Code</a>
+    </div>
+  </div>
+</div>

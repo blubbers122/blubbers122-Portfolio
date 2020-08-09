@@ -1,19 +1,16 @@
 // forces retrieval of page from server
 window.addEventListener( "pageshow", function ( event ) {
-  console.log('pageshow')
   var historyTraversal = event.persisted ||
                          ( typeof window.performance != "undefined" &&
                               window.performance.navigation.type === 2 );
   if ( historyTraversal ) {
     // Handle page restore.
-    console.log('hi')
     window.location.reload();
   }
 });
 
 window.onload = function() {
   var reloading = sessionStorage.getItem("reloading");
-  console.log(reloading)
     if (reloading) {
         sessionStorage.removeItem("reloading");
         loadContent(window.location.pathname);
@@ -65,10 +62,20 @@ function loadContent(name) {
     const response = request.responseText;
     document.querySelector("#content").innerHTML = response;
 
-    //document.title = name;
-    //history.pushState(null, name, name);
+    // adds modal button event listeners when project content is loaded
+    if (name == "projects") {
+
+      modalButtons = document.querySelectorAll(".open-modal-btn");
+      modalButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          document.querySelector(".modal-title").innerHTML = button.dataset.title;
+          //document.querySelector(".video-wrapper iframe");
+        });
+      });
+    }
   };
   request.send();
+
 }
 
 // loads single page web app content when clicking nav items
