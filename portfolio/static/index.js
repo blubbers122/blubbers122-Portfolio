@@ -69,8 +69,14 @@ function loadContent(name) {
       modalButtons.forEach(button => {
         button.addEventListener("click", () => {
           document.querySelector(".modal-title").innerHTML = button.dataset.title;
-          //document.querySelector(".video-wrapper iframe");
+          document.querySelector(".video-wrapper iframe").src = button.dataset.video;
         });
+      });
+
+      // ensures the video doesn't continue playing after exiting modal
+      $('.modal').on('hide.bs.modal', function() {
+        var memory = $(this).html();
+        $(this).html(memory);
       });
     }
   };
